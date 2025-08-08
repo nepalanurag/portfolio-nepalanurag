@@ -74,8 +74,7 @@ export default function AboutSection() {
 
                 <p>
                   When I'm not analyzing data, you can find me at the movies,
-                  cuddling with my pillow, diving into a good book, or
-                  experimenting in the kitchen.
+                  diving into a good book, or experimenting in the kitchen.
                 </p>
               </div>
             </div>
