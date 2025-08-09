@@ -7,7 +7,7 @@ export default function Footer() {
             powered by french press & bench press
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-500">
-            last updated in March '25
+            last updated in August '25
           </p>
         </div>
       </div>
