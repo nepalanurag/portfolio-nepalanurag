@@ -30,11 +30,14 @@ const ChatWindow: React.FC = () => {
     setInput("");
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
-      });
+      const res = await fetch(
+        "https://your-backend-project.vercel.app/api/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: input }),
+        }
+      );
       const data = await res.json();
       setMessages((msgs) => [
         ...msgs,
