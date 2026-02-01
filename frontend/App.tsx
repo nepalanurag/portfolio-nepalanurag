@@ -1,33 +1,33 @@
-import { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
-import Navigation from './components/Navigation';
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import ProjectsSection from './components/ProjectsSection';
-import ExperienceSection from './components/ExperienceSection';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import { FORMSPREE_ENDPOINT } from './config';
+import { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
+import Navigation from "./components/Navigation";
+import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ExperienceSection from "./components/ExperienceSection";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
+import { FORMSPREE_ENDPOINT } from "./config";
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const { toast } = useToast();
 
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'projects', 'contact'];
+      const sections = ["hero", "about", "projects", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -35,8 +35,11 @@ export default function App() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -44,14 +47,14 @@ export default function App() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
@@ -60,12 +63,16 @@ export default function App() {
     setIsDarkMode(!isDarkMode);
   };
 
-  const handleContactSubmit = async (formData: { name: string; email: string; message: string }) => {
+  const handleContactSubmit = async (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -77,13 +84,14 @@ export default function App() {
         });
         return true;
       } else {
-        throw new Error('Failed to send message');
+        throw new Error("Failed to send message");
       }
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error("Contact form error:", error);
       toast({
         title: "Something went wrong",
-        description: "Please try again or contact me directly at nepalanurag72@gmail.com",
+        description:
+          "Please try again or contact me directly at nepalanurag72@gmail.com",
         variant: "destructive",
       });
       return false;
@@ -108,17 +116,17 @@ export default function App() {
         </Button>
       </div>
 
-      <Navigation 
+      <Navigation
         activeSection={activeSection}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
         scrollToSection={scrollToSection}
       />
-      
+
       <HeroSection scrollToSection={scrollToSection} />
       <AboutSection />
-      <ProjectsSection />
       <ExperienceSection />
+      <ProjectsSection />
       <ContactSection handleContactSubmit={handleContactSubmit} />
       <Footer />
     </div>
