@@ -36,15 +36,14 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 mt-20">
         <div className="mb-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-8 leading-tight font-inter">
-            Turning Raw Data into{" "}
+            Hi, I'm{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-              Real Impact
+              Anurag Nepal
             </span>{" "}
-            — One Dataset at a Time
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-normal text-gray-700 dark:text-gray-300 mb-4 leading-relaxed font-work-sans">
-            Hi, I'm Anurag Nepal — Data Science Grad Student | Analytics-Driven
-            Problem Solver | ML Enthusiast
+            Data Science Grad Student | Analytics-Driven Problem Solver | ML
+            Enthusiast
           </h2>
         </div>
 
@@ -63,7 +62,7 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
             className="px-12 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full transition-all duration-300"
             onClick={() => scrollToSection("projects")}
           >
-            View My Work
+            View My Projects
           </Button>
         </div>
       </div>

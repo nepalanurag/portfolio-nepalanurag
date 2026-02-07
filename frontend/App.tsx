@@ -27,7 +27,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "projects", "contact"];
+      const sections = ["hero", "projects", "experience", "about", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -124,9 +124,9 @@ export default function App() {
       />
 
       <HeroSection scrollToSection={scrollToSection} />
-      <AboutSection />
-      <ExperienceSection />
       <ProjectsSection />
+      <ExperienceSection />
+      <AboutSection />
       <ContactSection handleContactSubmit={handleContactSubmit} />
       <Footer />
     </div>
