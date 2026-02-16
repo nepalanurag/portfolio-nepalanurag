@@ -20,7 +20,8 @@ export default function ProjectsSection() {
         "Feature Selection",
         "Statistical Analysis",
       ],
-
+      githubLink: "",
+      liveLink: "",
       image:
         "https://images.unsplash.com/photo-1643780668909-580822430155?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
@@ -103,23 +104,35 @@ export default function ProjectsSection() {
             </span>
           ))}
         </div>
-        <div className="flex gap-3 mt-auto">
-          <Button
-            variant="outline"
-            className="flex-1 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 transition-all duration-300 border-gray-300 dark:border-gray-600"
-            onClick={() => window.open(project.githubLink, "_blank")}
-          >
-            <Github className="mr-2 h-4 w-4" />
-            Code
-          </Button>
-          <Button
-            className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
-            onClick={() => window.open(project.liveLink, "_blank")}
-          >
-            <ExternalLink className="mr-2 h-4 w-4" />
-            View Project
-          </Button>
-        </div>
+        {/* Show 'Ongoing Research' button for T-cell Receptor Analysis, else show normal buttons */}
+        {project.title === "T-cell Receptor Analysis(Ongoing)" ? (
+          <div className="flex gap-3 mt-auto">
+            <Button
+              disabled
+              className="flex-1 bg-yellow-500 text-white cursor-not-allowed opacity-80"
+            >
+              Ongoing Research
+            </Button>
+          </div>
+        ) : (
+          <div className="flex gap-3 mt-auto">
+            <Button
+              variant="outline"
+              className="flex-1 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 transition-all duration-300 border-gray-300 dark:border-gray-600"
+              onClick={() => window.open(project.githubLink, "_blank")}
+            >
+              <Github className="mr-2 h-4 w-4" />
+              Code
+            </Button>
+            <Button
+              className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
+              onClick={() => window.open(project.liveLink, "_blank")}
+            >
+              <ExternalLink className="mr-2 h-4 w-4" />
+              View Project
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
