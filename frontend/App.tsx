@@ -10,6 +10,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import { FORMSPREE_ENDPOINT } from "./config";
+import ChatWindow from "./components/ChatWindow";
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -129,6 +130,8 @@ export default function App() {
       <AboutSection />
       <ContactSection handleContactSubmit={handleContactSubmit} />
       <Footer />
+      {/* Chat Window */}
+      <ChatWindow />
     </div>
   );
 }
