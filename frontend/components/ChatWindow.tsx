@@ -31,7 +31,7 @@ const ChatWindow: React.FC = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        "portfolio-nepalanurag-backend.vercel.app/api/chat",
+        "https://portfolio-nepalanurag-backend.vercel.app//api/chat",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
