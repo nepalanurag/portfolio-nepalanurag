@@ -1,18 +1,39 @@
+
 import axios from 'axios';
 
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
 
-export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
-    const { message } = req.body;
-    if (!message || !message.trim()) {
-        return res.status(400).json({ error: 'Message cannot be empty' });
-    }
 
-    const systemPrompt = `You are an AI assistant representing Anurag Nepal's portfolio website. You have detailed knowledge about his background, experience, and skills. Here's what you know about Anurag:
+
+// Allow only specific origins (localhost for dev, Vercel frontend for prod)
+const allowedOrigins = [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://anurag-nepal-portfolio.vercel.app'
+];
+const origin = req.headers.origin;
+if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+}
+// Always set these headers
+res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+// Handle preflight OPTIONS request
+if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+}
+
+if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+}
+const { message } = req.body;
+if (!message || !message.trim()) {
+    return res.status(400).json({ error: 'Message cannot be empty' });
+}
+
+const systemPrompt = `You are an AI assistant representing Anurag Nepal's portfolio website. You have detailed knowledge about his background, experience, and skills. Here's what you know about Anurag:
 
 PERSONAL INFORMATION:
 - Name: Anurag Nepal
@@ -90,44 +111,42 @@ User question: ${message}
 
 Please provide a helpful response about Anurag Nepal:`;
 
-    try {
-        const response = await axios.post(
-            `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
-            {
-                contents: [
-                    {
-                        parts: [
-                            { text: systemPrompt }
-                        ]
-                    }
-                ],
-                generationConfig: {
-                    temperature: 0.7,
-                    topK: 40,
-                    topP: 0.95,
-                    maxOutputTokens: 500,
-                },
-                safetySettings: [
-                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" }
-                ]
-            }
-        );
-        const aiResponse = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (!aiResponse) {
-            throw new Error("No response from AI");
+try {
+    const response = await axios.post(
+        `${GEMINI_API_URL}?key=${GEMINI_API_KEY}`,
+        {
+            contents: [
+                {
+                    parts: [
+                        { text: systemPrompt }
+                    ]
+                }
+            ],
+            generationConfig: {
+                temperature: 0.7,
+                topK: 40,
+                topP: 0.95,
+                maxOutputTokens: 500,
+            },
+            safetySettings: [
+                { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" }
+            ]
         }
-        return res.status(200).json({ answer: aiResponse });
-    } catch (error) {
-        console.error("Chat API error:", error?.response?.data || error?.message || error);
-        // Fallback to smart responses
-        const fallbackResponse = getFallbackResponse(message);
-        return res.status(200).json({ answer: fallbackResponse });
+    );
+    const aiResponse = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!aiResponse) {
+        throw new Error("No response from AI");
     }
+    return res.status(200).json({ answer: aiResponse });
+} catch (error) {
+    console.error("Chat API error:", error?.response?.data || error?.message || error);
+    // Fallback to smart responses
+    const fallbackResponse = getFallbackResponse(message);
+    return res.status(200).json({ answer: fallbackResponse });
 }
-
 function getFallbackResponse(message) {
     const lowerMessage = message.toLowerCase();
     if (lowerMessage.includes('experience') || lowerMessage.includes('work') || lowerMessage.includes('job')) {
