@@ -55,41 +55,105 @@ const ChatWindow: React.FC = () => {
   // Floating button (collapsed)
   if (!open) {
     return (
-      <button
-        onClick={() => setOpen(true)}
-        style={{
-          position: "fixed",
-          bottom: 36,
-          right: 36,
-          width: 64,
-          height: 64,
-          borderRadius: "50%",
-          background: "#2970f1",
-          border: "none",
-          boxShadow: "0 8px 32px rgba(41,112,241,0.18)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          zIndex: 1000,
-          cursor: "pointer",
-          transition: "box-shadow 0.2s",
-        }}
-        aria-label="Open chat"
-      >
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+      <>
+        {/* Animated Hint bubble */}
+        <div
+          style={{
+            position: "fixed",
+            bottom: 120,
+            right: 36,
+            background: "#fff",
+            color: "#2970f1",
+            padding: "14px 14px",
+            borderRadius: "28px",
+            boxShadow: "0 4px 24px rgba(41,112,241,0.13)",
+            fontWeight: 600,
+            fontSize: 12,
+            zIndex: 1001,
+            pointerEvents: "none",
+            opacity: 1,
+            transform: "scale(0.95) translateY(20px)",
+            animation:
+              "hintPop 0.7s cubic-bezier(.68,-0.55,.27,1.55) forwards, hintFloat 2.5s 1.2s infinite alternate",
+          }}
         >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M8 12h.01M12 12h.01M16 12h.01" />
-        </svg>
-      </button>
+          Press here to ask questions about Anurag
+          <span
+            style={{
+              content: "",
+              position: "absolute",
+              right: 48,
+              bottom: -18,
+              width: 0,
+              height: 0,
+              borderLeft: "16px solid transparent",
+              borderRight: "16px solid transparent",
+              borderTop: "18px solid #fff",
+              filter: "drop-shadow(0 2px 4px rgba(41,112,241,0.10))",
+              zIndex: 1002,
+              display: "inline-block",
+            }}
+          />
+        </div>
+        <button
+          onClick={() => setOpen(true)}
+          style={{
+            position: "fixed",
+            bottom: 36,
+            right: 36,
+            width: 72,
+            height: 72,
+            borderRadius: "50%",
+            background: "#2970f1",
+            border: "none",
+            boxShadow: "0 8px 32px rgba(41,112,241,0.18)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+            cursor: "pointer",
+            transition: "box-shadow 0.2s, transform 0.2s",
+            animation:
+              "buttonPop 0.7s cubic-bezier(.68,-0.55,.27,1.55) forwards, buttonFloat 2.5s 1.2s infinite alternate",
+          }}
+          aria-label="Open chat"
+        >
+          {/* Proper message icon */}
+          <svg
+            width="38"
+            height="38"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </button>
+        {/* Animations */}
+        <style>{`
+          @keyframes hintPop {
+            0% { opacity: 0; transform: scale(0.7) translateY(40px); }
+            80% { opacity: 1; transform: scale(1.05) translateY(-6px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+          }
+          @keyframes hintFloat {
+            0% { transform: scale(1) translateY(0); }
+            100% { transform: scale(1.03) translateY(-8px); }
+          }
+          @keyframes buttonPop {
+            0% { transform: scale(0.7); }
+            80% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+          }
+          @keyframes buttonFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-6px); }
+          }
+        `}</style>
+      </>
     );
   }
 
