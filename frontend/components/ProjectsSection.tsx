@@ -11,9 +11,9 @@ import {
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "T-cell Receptor Analysis(Ongoing)",
+      title: "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso ",
       description:
-        "Research project focusing on feature selection and classification methods for immune-related sequence analysis using Random Forests and Boruta algorithms.",
+        "Thesis project focusing on feature selection for immune-related sequence analysis using Permutation Assisted Group Lasso.",
       techStack: [
         "R",
         "Bioinformatics",
