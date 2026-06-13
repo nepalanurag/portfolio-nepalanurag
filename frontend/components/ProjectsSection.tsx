@@ -11,7 +11,7 @@ import {
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso ",
+      title: "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso",
       description:
         "Thesis project focusing on feature selection for immune-related sequence analysis using Permutation Assisted Group Lasso.",
       techStack: [
@@ -105,13 +105,13 @@ export default function ProjectsSection() {
           ))}
         </div>
         {/* Show 'Ongoing Research' button for T-cell Receptor Analysis, else show normal buttons */}
-        {project.title === "T-cell Receptor Analysis(Ongoing)" ? (
+        {project.title === "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso" ? (
           <div className="flex gap-3 mt-auto">
             <Button
               disabled
               className="flex-1 bg-yellow-500 text-white cursor-not-allowed opacity-80"
             >
-              Ongoing Research
+              Preparing a paper for publication
             </Button>
           </div>
         ) : (
