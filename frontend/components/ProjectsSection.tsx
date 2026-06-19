@@ -11,6 +11,70 @@ import {
 export default function ProjectsSection() {
   const projects = [
     {
+      title: "Can an LLM Replace Human Annotators?",
+      description:
+        "I had Gemini classify 248 biomedical abstracts and scored it like a real reliability study: 96.0% accuracy (95% CI 92.7 to 97.8), Cohen's kappa 0.946, well-calibrated confidence, at $0.21 per 1,000 annotations. The honest verdict: reliable for coarse triage, not for final labels.",
+      techStack: [
+        "Python",
+        "Gemini API",
+        "scikit-learn",
+        "Statistics",
+        "Plotly",
+      ],
+      githubLink: "https://github.com/nepalanurag/llm-annotator-reliability",
+      liveLink: "https://anurag-ai-lab.vercel.app/llm-annotator-reliability",
+      image:
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
+      title: "RAG Evaluation Lab",
+      description:
+        "I ran RAG evaluation like a real experiment: a 2x2x2 factorial design (chunk size x top-k x query rewriting) over a PubMed corpus with 40 test questions, analyzed with ANOVA and effect sizes. The honest result was a null: no factor reached significance, retrieval sat near ceiling in all conditions, and query rewriting slightly hurt recall.",
+      techStack: [
+        "Python",
+        "Gemini API",
+        "TF-IDF",
+        "Experimental Design",
+        "ANOVA",
+      ],
+      githubLink: "https://github.com/nepalanurag/rag-eval-lab",
+      liveLink: "https://anurag-ai-lab.vercel.app/rag-eval-lab",
+      image:
+        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
+      title: "Synthetic Data Tradeoffs",
+      description:
+        "I compared a from-scratch Gaussian copula against LLM row synthesis on the breast cancer dataset across fidelity, utility, and privacy. The copula nearly matched training on real data (random forest AUC 0.982 vs 0.985) while the LLM rows lost more signal; membership-inference attacks stayed near chance for both.",
+      techStack: [
+        "Python",
+        "scikit-learn",
+        "Gemini API",
+        "Privacy",
+        "Plotly",
+      ],
+      githubLink: "https://github.com/nepalanurag/synthetic-data-tradeoffs",
+      liveLink: "https://anurag-ai-lab.vercel.app/synthetic-data-tradeoffs",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
+      title: "Double Machine Learning for a Causal Effect",
+      description:
+        "Estimating the causal effect of 401(k) eligibility on household wealth with naive OLS, OLS with controls, propensity-score matching, and double machine learning with cross-fitting, each with honest 95% confidence intervals. DML landed closest to the true $8,000 effect; naive OLS overestimated it nearly eightfold.",
+      techStack: [
+        "Python",
+        "scikit-learn",
+        "Causal Inference",
+        "Econometrics",
+      ],
+      githubLink: "https://github.com/nepalanurag/causal-double-ml",
+      liveLink: "https://anurag-ai-lab.vercel.app/causal-double-ml",
+      image:
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+
+    {
       title: "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso",
       description:
         "Thesis project focusing on feature selection for immune-related sequence analysis using Permutation Assisted Group Lasso.",
