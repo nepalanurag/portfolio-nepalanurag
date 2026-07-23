@@ -22,7 +22,7 @@ export default function ProjectsSection() {
         "Plotly",
       ],
       githubLink: "https://github.com/nepalanurag/llm-annotator-reliability",
-      liveLink: "https://anurag-ai-lab.vercel.app/llm-annotator-reliability",
+      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/llm-annotator-reliability",
       image:
         "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
@@ -38,7 +38,7 @@ export default function ProjectsSection() {
         "ANOVA",
       ],
       githubLink: "https://github.com/nepalanurag/rag-eval-lab",
-      liveLink: "https://anurag-ai-lab.vercel.app/rag-eval-lab",
+      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/rag-eval-lab",
       image:
         "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
         "Plotly",
       ],
       githubLink: "https://github.com/nepalanurag/synthetic-data-tradeoffs",
-      liveLink: "https://anurag-ai-lab.vercel.app/synthetic-data-tradeoffs",
+      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/synthetic-data-tradeoffs",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
@@ -69,7 +69,7 @@ export default function ProjectsSection() {
         "Econometrics",
       ],
       githubLink: "https://github.com/nepalanurag/causal-double-ml",
-      liveLink: "https://anurag-ai-lab.vercel.app/causal-double-ml",
+      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/causal-double-ml",
       image:
         "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
