@@ -75,6 +75,70 @@ export default function ProjectsSection() {
     },
 
     {
+      title: "Thesis Results: Multi-Modal Feature Selection",
+      description:
+        "My thesis work on permutation-assisted group lasso for multi-modal feature selection, with the TCGA-BRCA stability study: the adopted method reached Jaccard 0.680 and AUC 0.948, beating standard group lasso on stability. The site walks through the methods and results with interactive plots.",
+      techStack: [
+        "R",
+        "Plotly",
+        "TCGA",
+        "Feature Selection",
+        "Stability Analysis",
+      ],
+      githubLink: "https://github.com/nepalanurag/thesis-findings",
+      liveLink: "https://anurag-thesis.vercel.app/",
+      image:
+        "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
+      title: "Malaria Cell Classifier (Live Demo)",
+      description:
+        "I compared two CNNs on the NIH malaria cell-image set and kept the better one: 93.2% accuracy (95% CI 92.9 to 93.5), AUC 0.958. The demo runs the model in your browser with test-time augmentation, so every prediction comes with a confidence interval.",
+      techStack: [
+        "Python",
+        "TensorFlow",
+        "ONNX",
+        "Statistics",
+        "Bootstrap CI",
+      ],
+      githubLink: "https://github.com/nepalanurag/malaria-cnn-web",
+      liveLink: "https://malaria-cnn-web.vercel.app/",
+      image:
+        "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
+      title: "COVID CT Infection Map (Live Demo)",
+      description:
+        "I rebuilt this CT project as an interpretable segmentation pipeline and fixed a real bug: the original divided by the wrong denominator and reported infection over 100%. The demo shows per-slice infection maps with Wilson 95% intervals on a real COVID-positive scan.",
+      techStack: [
+        "Python",
+        "pydicom",
+        "NumPy",
+        "Image Segmentation",
+        "Wilson CI",
+      ],
+      githubLink: "https://github.com/nepalanurag/covid-ct-web",
+      liveLink: "https://covid-ct-web.vercel.app/",
+      image:
+        "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
+      title: "ECG Arrhythmia Classifier (Live Demo)",
+      description:
+        "I evaluated an ECG arrhythmia network honestly: 98.8% accuracy on the shipped split, but 87.0% under grouped cross-validation by patient record, which shows how patient leakage inflates results. The demo classifies a heartbeat in your browser with temperature-scaled confidence.",
+      techStack: [
+        "Python",
+        "TensorFlow",
+        "ONNX",
+        "Time-Series CV",
+        "Calibration",
+      ],
+      githubLink: "https://github.com/nepalanurag/ecg-classification-web",
+      liveLink: "https://ecg-classification-web.vercel.app/",
+      image:
+        "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+    },
+    {
       title: "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso",
       description:
         "Thesis project focusing on feature selection for immune-related sequence analysis using Permutation Assisted Group Lasso.",
