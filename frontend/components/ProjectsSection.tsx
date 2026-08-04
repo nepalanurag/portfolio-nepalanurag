@@ -9,196 +9,148 @@ import {
 } from "@/components/ui/card";
 
 export default function ProjectsSection() {
-  const projects = [
+  const groups = [
     {
-      title: "Can an LLM Replace Human Annotators?",
-      description:
-        "I had Gemini classify 248 biomedical abstracts and scored it like a real reliability study: 96.0% accuracy (95% CI 92.7 to 97.8), Cohen's kappa 0.946, well-calibrated confidence, at $0.21 per 1,000 annotations. The honest verdict: reliable for coarse triage, not for final labels.",
-      techStack: [
-        "Python",
-        "Gemini API",
-        "scikit-learn",
-        "Statistics",
-        "Plotly",
+      name: "AI & Statistics",
+      projects: [
+        {
+          title: "Can an LLM Replace Human Annotators?",
+          description:
+            "I had Gemini classify 248 biomedical abstracts and scored it like a real reliability study: 96.0% accuracy (95% CI 92.7 to 97.8), Cohen's kappa 0.946, well-calibrated confidence, at $0.21 per 1,000 annotations. The honest verdict: reliable for coarse triage, not for final labels.",
+          techStack: [
+            "Python",
+            "Gemini API",
+            "scikit-learn",
+            "Statistics",
+            "Plotly",
+          ],
+          githubLink: "https://github.com/nepalanurag/llm-annotator-reliability",
+          liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/llm-annotator-reliability",
+          image:
+            "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "RAG Evaluation Lab",
+          description:
+            "I ran RAG evaluation like a real experiment: a 2x2x2 factorial design (chunk size x top-k x query rewriting) over a PubMed corpus with 40 test questions, analyzed with ANOVA and effect sizes. The honest result was a null: no factor reached significance, retrieval sat near ceiling in all conditions, and query rewriting slightly hurt recall.",
+          techStack: [
+            "Python",
+            "Gemini API",
+            "TF-IDF",
+            "Experimental Design",
+            "ANOVA",
+          ],
+          githubLink: "https://github.com/nepalanurag/rag-eval-lab",
+          liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/rag-eval-lab",
+          image:
+            "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "Synthetic Data Tradeoffs",
+          description:
+            "I compared a from-scratch Gaussian copula against LLM row synthesis on the breast cancer dataset across fidelity, utility, and privacy. The copula nearly matched training on real data (random forest AUC 0.982 vs 0.985) while the LLM rows lost more signal; membership-inference attacks stayed near chance for both.",
+          techStack: [
+            "Python",
+            "scikit-learn",
+            "Gemini API",
+            "Privacy",
+            "Plotly",
+          ],
+          githubLink: "https://github.com/nepalanurag/synthetic-data-tradeoffs",
+          liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/synthetic-data-tradeoffs",
+          image:
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "Double Machine Learning for a Causal Effect",
+          description:
+            "Estimating the causal effect of 401(k) eligibility on household wealth with naive OLS, OLS with controls, propensity-score matching, and double machine learning with cross-fitting, each with honest 95% confidence intervals. DML landed closest to the true $8,000 effect; naive OLS overestimated it nearly eightfold.",
+          techStack: [
+            "Python",
+            "scikit-learn",
+            "Causal Inference",
+            "Econometrics",
+          ],
+          githubLink: "https://github.com/nepalanurag/causal-double-ml",
+          liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/causal-double-ml",
+          image:
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
       ],
-      githubLink: "https://github.com/nepalanurag/llm-annotator-reliability",
-      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/llm-annotator-reliability",
-      image:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
     {
-      title: "RAG Evaluation Lab",
-      description:
-        "I ran RAG evaluation like a real experiment: a 2x2x2 factorial design (chunk size x top-k x query rewriting) over a PubMed corpus with 40 test questions, analyzed with ANOVA and effect sizes. The honest result was a null: no factor reached significance, retrieval sat near ceiling in all conditions, and query rewriting slightly hurt recall.",
-      techStack: [
-        "Python",
-        "Gemini API",
-        "TF-IDF",
-        "Experimental Design",
-        "ANOVA",
+      name: "Medical Diagnostics",
+      projects: [
+        {
+          title: "Malaria Cell Classifier",
+          description:
+            "I compared two CNNs on the NIH malaria cell-image set and kept the better one: 93.2% accuracy (95% CI 92.9 to 93.5), AUC 0.958. The demo runs the model in your browser with test-time augmentation, so every prediction comes with a confidence interval.",
+          techStack: [
+            "Python",
+            "TensorFlow",
+            "ONNX",
+            "Statistics",
+            "Bootstrap CI",
+          ],
+          githubLink: "https://github.com/nepalanurag/malaria-cnn-web",
+          liveLink: "https://malaria-cnn-web.vercel.app/",
+          image:
+            "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "COVID CT Infection Map",
+          description:
+            "I rebuilt this CT project as an interpretable segmentation pipeline and fixed a real bug: the original divided by the wrong denominator and reported infection over 100%. The demo shows per-slice infection maps with Wilson 95% intervals on a real COVID-positive scan.",
+          techStack: [
+            "Python",
+            "pydicom",
+            "NumPy",
+            "Image Segmentation",
+            "Wilson CI",
+          ],
+          githubLink: "https://github.com/nepalanurag/covid-ct-web",
+          liveLink: "https://covid-ct-web.vercel.app/",
+          image:
+            "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "ECG Arrhythmia Classifier",
+          description:
+            "I evaluated an ECG arrhythmia network honestly: 98.8% accuracy on the shipped split, but 87.0% under grouped cross-validation by patient record, which shows how patient leakage inflates results. The demo classifies a heartbeat in your browser with temperature-scaled confidence.",
+          techStack: [
+            "Python",
+            "TensorFlow",
+            "ONNX",
+            "Time-Series CV",
+            "Calibration",
+          ],
+          githubLink: "https://github.com/nepalanurag/ecg-classification-web",
+          liveLink: "https://ecg-classification-web.vercel.app/",
+          image:
+            "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
       ],
-      githubLink: "https://github.com/nepalanurag/rag-eval-lab",
-      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/rag-eval-lab",
-      image:
-        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
     {
-      title: "Synthetic Data Tradeoffs",
-      description:
-        "I compared a from-scratch Gaussian copula against LLM row synthesis on the breast cancer dataset across fidelity, utility, and privacy. The copula nearly matched training on real data (random forest AUC 0.982 vs 0.985) while the LLM rows lost more signal; membership-inference attacks stayed near chance for both.",
-      techStack: [
-        "Python",
-        "scikit-learn",
-        "Gemini API",
-        "Privacy",
-        "Plotly",
+      name: "Research",
+      projects: [
+        {
+          title: "Thesis Results: Multi-Modal Feature Selection",
+          description:
+            "My thesis work on permutation-assisted group lasso for multi-modal feature selection, with the TCGA-BRCA stability study: the adopted method reached Jaccard 0.680 and AUC 0.948, beating standard group lasso on stability. The site walks through the methods and results with interactive plots. Manuscript in preparation.",
+          techStack: [
+            "R",
+            "Plotly",
+            "TCGA",
+            "Feature Selection",
+            "Stability Analysis",
+          ],
+          githubLink: "https://github.com/nepalanurag/thesis-findings",
+          liveLink: "https://anurag-thesis.vercel.app/",
+          image:
+            "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
       ],
-      githubLink: "https://github.com/nepalanurag/synthetic-data-tradeoffs",
-      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/synthetic-data-tradeoffs",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Double Machine Learning for a Causal Effect",
-      description:
-        "Estimating the causal effect of 401(k) eligibility on household wealth with naive OLS, OLS with controls, propensity-score matching, and double machine learning with cross-fitting, each with honest 95% confidence intervals. DML landed closest to the true $8,000 effect; naive OLS overestimated it nearly eightfold.",
-      techStack: [
-        "Python",
-        "scikit-learn",
-        "Causal Inference",
-        "Econometrics",
-      ],
-      githubLink: "https://github.com/nepalanurag/causal-double-ml",
-      liveLink: "https://anurag-nepal-portfolio.vercel.app/ai-lab/causal-double-ml",
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-
-    {
-      title: "Thesis Results: Multi-Modal Feature Selection",
-      description:
-        "My thesis work on permutation-assisted group lasso for multi-modal feature selection, with the TCGA-BRCA stability study: the adopted method reached Jaccard 0.680 and AUC 0.948, beating standard group lasso on stability. The site walks through the methods and results with interactive plots.",
-      techStack: [
-        "R",
-        "Plotly",
-        "TCGA",
-        "Feature Selection",
-        "Stability Analysis",
-      ],
-      githubLink: "https://github.com/nepalanurag/thesis-findings",
-      liveLink: "https://anurag-thesis.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Malaria Cell Classifier (Live Demo)",
-      description:
-        "I compared two CNNs on the NIH malaria cell-image set and kept the better one: 93.2% accuracy (95% CI 92.9 to 93.5), AUC 0.958. The demo runs the model in your browser with test-time augmentation, so every prediction comes with a confidence interval.",
-      techStack: [
-        "Python",
-        "TensorFlow",
-        "ONNX",
-        "Statistics",
-        "Bootstrap CI",
-      ],
-      githubLink: "https://github.com/nepalanurag/malaria-cnn-web",
-      liveLink: "https://malaria-cnn-web.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "COVID CT Infection Map (Live Demo)",
-      description:
-        "I rebuilt this CT project as an interpretable segmentation pipeline and fixed a real bug: the original divided by the wrong denominator and reported infection over 100%. The demo shows per-slice infection maps with Wilson 95% intervals on a real COVID-positive scan.",
-      techStack: [
-        "Python",
-        "pydicom",
-        "NumPy",
-        "Image Segmentation",
-        "Wilson CI",
-      ],
-      githubLink: "https://github.com/nepalanurag/covid-ct-web",
-      liveLink: "https://covid-ct-web.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "ECG Arrhythmia Classifier (Live Demo)",
-      description:
-        "I evaluated an ECG arrhythmia network honestly: 98.8% accuracy on the shipped split, but 87.0% under grouped cross-validation by patient record, which shows how patient leakage inflates results. The demo classifies a heartbeat in your browser with temperature-scaled confidence.",
-      techStack: [
-        "Python",
-        "TensorFlow",
-        "ONNX",
-        "Time-Series CV",
-        "Calibration",
-      ],
-      githubLink: "https://github.com/nepalanurag/ecg-classification-web",
-      liveLink: "https://ecg-classification-web.vercel.app/",
-      image:
-        "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso",
-      description:
-        "Thesis project focusing on feature selection for immune-related sequence analysis using Permutation Assisted Group Lasso.",
-      techStack: [
-        "R",
-        "Bioinformatics",
-        "Feature Selection",
-        "Statistical Analysis",
-      ],
-      githubLink: "",
-      liveLink: "",
-      image:
-        "https://images.unsplash.com/photo-1643780668909-580822430155?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Biomedical Imaging Analysis",
-      description:
-        "Developed an image diagnostic system for Covid-19 detection in chest CT scans using state-of-the-art machine learning algorithms with optimized parameters for enhanced efficiency.",
-      techStack: [
-        "Python",
-        "ITK",
-        "OpenCV",
-        "Image Processing",
-        "Machine Learning",
-      ],
-      githubLink:
-        "https://github.com/nepalanurag/Biomedical-Imaging-Analysis/blob/main/FINAL_PRESENTATION.ipynb",
-      liveLink:
-        "https://biomedical-imaging-analysis-bqz3vxbwdygrrdzfzyugqb.streamlit.app/",
-      image:
-        "https://images.unsplash.com/photo-1584555613497-9ecf9dd06f68?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Malaria Detection using CNN",
-      description:
-        "Developed a convolutional neural network for malaria detection achieving high accuracy in identifying infected blood cells. Co-authored and published research paper on groundbreaking medical diagnostic approaches.",
-      techStack: ["Python", "Keras", "TensorFlow", "OpenCV", "Android"],
-      githubLink:
-        "https://github.com/nepalanurag/Detection-of-Malaria-Using-CNN",
-      liveLink:
-        "https://detection-of-malaria-using-cnn-7dawpqv9c6wowk4oeappeub.streamlit.app/",
-      image:
-        "https://images.unsplash.com/photo-1706643568612-9b13870c8d21?q=80&w=1464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
-    },
-    {
-      title: "ECG Classification System",
-      description:
-        "Implemented machine learning models to predict myocardial infractions based on ECG data using advanced algorithms and real-time data analysis capabilities.",
-      techStack: [
-        "Python",
-        "Scikit-learn",
-        "Pandas",
-        "Matplotlib",
-        "Signal Processing",
-      ],
-      githubLink: "https://github.com/nepalanurag/ECG-Classification",
-      liveLink:
-        "https://nepalanurag-ecg-classification-ecg-app-ewisvk.streamlit.app/",
-      image:
-        "https://images.unsplash.com/photo-1682706841289-9d7ddf5eb999?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
     },
   ];
 
@@ -232,35 +184,23 @@ export default function ProjectsSection() {
             </span>
           ))}
         </div>
-        {/* Show 'Ongoing Research' button for T-cell Receptor Analysis, else show normal buttons */}
-        {project.title === "Integrative Feature Selection for Multi-Modal Data via Permutation-Assisted Group Lasso" ? (
-          <div className="flex gap-3 mt-auto">
-            <Button
-              disabled
-              className="flex-1 bg-yellow-500 text-white cursor-not-allowed opacity-80"
-            >
-              Preparing a paper for publication
-            </Button>
-          </div>
-        ) : (
-          <div className="flex gap-3 mt-auto">
-            <Button
-              variant="outline"
-              className="flex-1 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 transition-all duration-300 border-gray-300 dark:border-gray-600"
-              onClick={() => window.open(project.githubLink, "_blank")}
-            >
-              <Github className="mr-2 h-4 w-4" />
-              Code
-            </Button>
-            <Button
-              className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
-              onClick={() => window.open(project.liveLink, "_blank")}
-            >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              View Project
-            </Button>
-          </div>
-        )}
+        <div className="flex gap-3 mt-auto">
+          <Button
+            variant="outline"
+            className="flex-1 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-500 transition-all duration-300 border-gray-300 dark:border-gray-600"
+            onClick={() => window.open(project.githubLink, "_blank")}
+          >
+            <Github className="mr-2 h-4 w-4" />
+            Code
+          </Button>
+          <Button
+            className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
+            onClick={() => window.open(project.liveLink, "_blank")}
+          >
+            <ExternalLink className="mr-2 h-4 w-4" />
+            View Project
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
@@ -281,11 +221,18 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
+        {groups.map((group) => (
+          <div key={group.name} className="mb-16 last:mb-0">
+            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8 font-inter">
+              {group.name}
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {group.projects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
