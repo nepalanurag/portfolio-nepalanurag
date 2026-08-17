@@ -222,7 +222,13 @@ export default function ProjectsSection() {
         </div>
 
         {groups.map((group) => (
-          <div key={group.name} className="mb-16 last:mb-0">
+          <div
+            key={group.name}
+            id={`projects-${group.name
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")}`}
+            className="mb-16 last:mb-0 scroll-mt-24"
+          >
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-8 font-inter">
               {group.name}
             </h3>
