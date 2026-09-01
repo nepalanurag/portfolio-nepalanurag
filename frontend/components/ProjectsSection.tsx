@@ -92,7 +92,8 @@ export default function ProjectsSection() {
             "Statistics",
             "Bootstrap CI",
           ],
-          githubLink: "https://github.com/nepalanurag/malaria-cnn-web",
+          githubLink:
+            "https://github.com/nepalanurag/Detection-of-Malaria-Using-CNN",
           liveLink: "https://malaria-cnn-web.vercel.app/",
           image:
             "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
@@ -108,7 +109,8 @@ export default function ProjectsSection() {
             "Image Segmentation",
             "Wilson CI",
           ],
-          githubLink: "https://github.com/nepalanurag/covid-ct-web",
+          githubLink:
+            "https://github.com/nepalanurag/Biomedical-Imaging-Analysis",
           liveLink: "https://covid-ct-web.vercel.app/",
           image:
             "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
@@ -124,7 +126,7 @@ export default function ProjectsSection() {
             "Time-Series CV",
             "Calibration",
           ],
-          githubLink: "https://github.com/nepalanurag/ecg-classification-web",
+          githubLink: "https://github.com/nepalanurag/ECG-Classification",
           liveLink: "https://ecg-classification-web.vercel.app/",
           image:
             "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
@@ -151,6 +153,140 @@ export default function ProjectsSection() {
             "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
         },
       ],
+    },
+  ];
+
+  const moreProjects = [
+    {
+      title: "Premier League Match Prediction",
+      description:
+        "Predicting match outcomes with rolling form features, trained on three seasons from 2023-24 through 2025-26 (1,130 matches).",
+      githubLink: "https://github.com/nepalanurag/premier-league-match-prediction",
+      liveLink: "https://nepalanurag.github.io/premier-league-match-prediction/",
+      liveLabel: "Results",
+    },
+    {
+      title: "NBA Schedule Analysis",
+      description:
+        "NBA game and schedule data analyzed with R and the tidyverse. The source CSVs are proprietary, so the repo ships the analysis without them.",
+      githubLink: "https://github.com/nepalanurag/nba-schedule-analysis",
+      liveLink: "https://nepalanurag.github.io/nba-schedule-analysis/",
+      liveLabel: "Results",
+    },
+    {
+      title: "Housing Price Model",
+      description:
+        "A pipeline bake-off for house price modeling, comparing imputation strategies head to head.",
+      githubLink: "https://github.com/nepalanurag/housing-price-model",
+      liveLink: "https://nepalanurag.github.io/housing-price-model/",
+      liveLabel: "Results",
+    },
+    {
+      title: "Stroke Prediction",
+      description:
+        "Stroke prediction from healthcare data, comparing eight models from logistic regression to boosting.",
+      githubLink: "https://github.com/nepalanurag/stroke-prediction",
+      liveLink: "https://nepalanurag.github.io/stroke-prediction/",
+      liveLabel: "Results",
+    },
+    {
+      title: "Lasso Simulation Study",
+      description:
+        "How lasso variable selection behaves across sample sizes, dimensions, and correlation strengths.",
+      githubLink: "https://github.com/nepalanurag/lasso-simulation-study",
+      liveLink: "https://nepalanurag.github.io/lasso-simulation-study/",
+      liveLabel: "Results",
+    },
+    {
+      title: "Influenza Deaths Forecast",
+      description:
+        "Time series forecasting of influenza and pneumonia deaths.",
+      githubLink: "https://github.com/nepalanurag/influenza-deaths-forecast",
+      liveLink: "https://nepalanurag.github.io/influenza-deaths-forecast/",
+      liveLabel: "Results",
+    },
+    {
+      title: "Statistics in the AI Age",
+      description:
+        "A short essay on which statistical skills still matter now that AI writes the code.",
+      githubLink: "https://github.com/nepalanurag/statistics-in-the-ai-age",
+      liveLink: "https://nepalanurag.github.io/statistics-in-the-ai-age/",
+      liveLabel: "Read",
+    },
+    {
+      title: "Conformal Prediction for LLMs",
+      description:
+        "Honest confidence sets for LLM answers with split conformal prediction.",
+      githubLink: "https://github.com/nepalanurag/conformal-llm",
+      liveLink: "https://conformal-llm.vercel.app/",
+      liveLabel: "Demo",
+    },
+    {
+      title: "Kalshi BTC 15m Bot",
+      description:
+        "A trading bot for Kalshi BTC 15-minute markets: RSI signals with a volatility-based strike picker. Paper trading only, no real orders.",
+      githubLink: "https://github.com/nepalanurag/kalshi-btc15m-bot",
+    },
+    {
+      title: "GratisBench",
+      description:
+        "32 free tools that run entirely in your browser: PDFs, images, audio, and more.",
+      githubLink: "https://github.com/nepalanurag/gratisbench",
+      liveLink: "https://gratisbench.vercel.app",
+      liveLabel: "Visit",
+    },
+    {
+      title: "TuneGrab",
+      description: "A free offline music player for Android.",
+      githubLink: "https://github.com/nepalanurag/tunegrab",
+      liveLink: "https://github.com/nepalanurag/tunegrab/releases",
+      liveLabel: "Releases",
+    },
+    {
+      title: "CN Lab",
+      description:
+        "Computer networks lab: NS2 simulations covering TCP, routing, and client-server transfers.",
+      githubLink: "https://github.com/nepalanurag/CN-LAB",
+    },
+    {
+      title: "Inventory Management (C++)",
+      description:
+        "A small inventory management system in C++, portable across Windows and Linux.",
+      githubLink:
+        "https://github.com/nepalanurag/Inventory-Managment-System-Using-CPP",
+    },
+    {
+      title: "Music Player (Python)",
+      description:
+        "A desktop music player built with Python, Tkinter, and pygame.",
+      githubLink: "https://github.com/nepalanurag/Music-Player-Using-Python",
+    },
+    {
+      title: "Pharmacy Management (Java)",
+      description:
+        "A pharmacy inventory and sales desktop app in Java with MySQL.",
+      githubLink:
+        "https://github.com/nepalanurag/Pharmacy-Management-System-Using-Java",
+    },
+    {
+      title: "Expense Manager (Android)",
+      description:
+        "An Android expense tracker with local storage: spending views by day, week, and month, plus a monthly bar chart.",
+      githubLink:
+        "https://github.com/nepalanurag/Expense_Manager_Android_Mini_Project",
+    },
+    {
+      title: "Banker's Algorithm (C)",
+      description:
+        "Resource allocation and deadlock avoidance: the Banker's algorithm in C.",
+      githubLink:
+        "https://github.com/nepalanurag/Resource-Request-Bankers-Algorithm",
+    },
+    {
+      title: "StickerCount",
+      description:
+        "A Monopoly GO sticker counter: photograph your album pages and it counts what you have.",
+      githubLink: "https://github.com/nepalanurag/stickercount",
     },
   ];
 
@@ -239,6 +375,52 @@ export default function ProjectsSection() {
             </div>
           </div>
         ))}
+
+        <div id="projects-more-projects" className="scroll-mt-24">
+          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4 font-inter">
+            More projects
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 font-work-sans">
+            Smaller studies, essays, tools, and earlier work. Each one links to
+            the code and, where there is one, a results page or live demo.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {moreProjects.map((project, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 flex flex-col"
+              >
+                <h4 className="text-lg font-bold text-gray-900 dark:text-white font-inter">
+                  {project.title}
+                </h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mt-1 mb-4 flex-1 font-work-sans">
+                  {project.description}
+                </p>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-gray-300 dark:border-gray-600"
+                    onClick={() => window.open(project.githubLink, "_blank")}
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    Code
+                  </Button>
+                  {project.liveLink && (
+                    <Button
+                      size="sm"
+                      className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
+                      onClick={() => window.open(project.liveLink, "_blank")}
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      {project.liveLabel}
+                    </Button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
