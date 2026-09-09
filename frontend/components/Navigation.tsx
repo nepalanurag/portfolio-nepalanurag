@@ -13,6 +13,7 @@ const projectGroups = [
   { name: "AI & Statistics", id: "projects-ai-statistics" },
   { name: "Medical Diagnostics", id: "projects-medical-diagnostics" },
   { name: "Research", id: "projects-research" },
+  { name: "More projects", id: "projects-more-projects" },
 ];
 
 export default function Navigation({
