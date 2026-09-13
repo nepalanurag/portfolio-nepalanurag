@@ -227,67 +227,6 @@ export default function ProjectsSection() {
         "A trading bot for Kalshi BTC 15-minute markets: RSI signals with a volatility-based strike picker. Paper trading only, no real orders.",
       githubLink: "https://github.com/nepalanurag/kalshi-btc15m-bot",
     },
-    {
-      title: "GratisBench",
-      description:
-        "32 free tools that run entirely in your browser: PDFs, images, audio, and more.",
-      githubLink: "https://github.com/nepalanurag/gratisbench",
-      liveLink: "https://gratisbench.vercel.app",
-      liveLabel: "Visit",
-    },
-    {
-      title: "TuneGrab",
-      description: "A free offline music player for Android.",
-      githubLink: "https://github.com/nepalanurag/tunegrab",
-      liveLink: "https://github.com/nepalanurag/tunegrab/releases",
-      liveLabel: "Releases",
-    },
-    {
-      title: "CN Lab",
-      description:
-        "Computer networks lab: NS2 simulations covering TCP, routing, and client-server transfers.",
-      githubLink: "https://github.com/nepalanurag/CN-LAB",
-    },
-    {
-      title: "Inventory Management (C++)",
-      description:
-        "A small inventory management system in C++, portable across Windows and Linux.",
-      githubLink:
-        "https://github.com/nepalanurag/Inventory-Managment-System-Using-CPP",
-    },
-    {
-      title: "Music Player (Python)",
-      description:
-        "A desktop music player built with Python, Tkinter, and pygame.",
-      githubLink: "https://github.com/nepalanurag/Music-Player-Using-Python",
-    },
-    {
-      title: "Pharmacy Management (Java)",
-      description:
-        "A pharmacy inventory and sales desktop app in Java with MySQL.",
-      githubLink:
-        "https://github.com/nepalanurag/Pharmacy-Management-System-Using-Java",
-    },
-    {
-      title: "Expense Manager (Android)",
-      description:
-        "An Android expense tracker with local storage: spending views by day, week, and month, plus a monthly bar chart.",
-      githubLink:
-        "https://github.com/nepalanurag/Expense_Manager_Android_Mini_Project",
-    },
-    {
-      title: "Banker's Algorithm (C)",
-      description:
-        "Resource allocation and deadlock avoidance: the Banker's algorithm in C.",
-      githubLink:
-        "https://github.com/nepalanurag/Resource-Request-Bankers-Algorithm",
-    },
-    {
-      title: "StickerCount",
-      description:
-        "A Monopoly GO sticker counter: photograph your album pages and it counts what you have.",
-      githubLink: "https://github.com/nepalanurag/stickercount",
-    },
   ];
 
   const ProjectCard = ({ project }: { project: any }) => (
@@ -381,7 +320,7 @@ export default function ProjectsSection() {
             More projects
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-8 font-work-sans">
-            Smaller studies, essays, tools, and earlier work. Each one links to
+            More data work: studies, essays, and side analyses. Each one links to
             the code and, where there is one, a results page or live demo.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
