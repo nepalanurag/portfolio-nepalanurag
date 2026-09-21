@@ -76,6 +76,66 @@ export default function ProjectsSection() {
           image:
             "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=600&h=400&fit=crop",
         },
+        {
+          title: "Honest Confidence Sets for LLM Answers",
+          description:
+            "I had a small open language model answer 416 MMLU questions and wrapped its outputs in split conformal prediction sets with a mathematical coverage guarantee. On 208 held-out questions the sets covered the truth 96.2% of the time at 90% nominal, with a mean set size under 3 of 4 options. The model's raw probabilities, thresholded naively, covered only 50.5%.",
+          techStack: [
+            "Python",
+            "Conformal Prediction",
+            "LLM",
+            "Statistics",
+            "MMLU",
+          ],
+          githubLink: "https://github.com/nepalanurag/conformal-llm",
+          liveLink: "https://conformal-llm.vercel.app/",
+          image:
+            "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "Stroke Prediction",
+          description:
+            "I compared eight models on 5,110 patient records across four preprocessing scenarios, then asked what the bake-off missed: the plain logistic regression won on both AUC (0.842) and calibration, the default 0.5 threshold catches almost no strokes (recall 0.02) while 0.125 gives the best trade-off, and age dominates the predictions.",
+          techStack: [
+            "R",
+            "Python",
+            "scikit-learn",
+            "Calibration",
+            "Imbalanced Data",
+          ],
+          githubLink: "https://github.com/nepalanurag/stroke-prediction",
+          liveLink: "https://nepalanurag.github.io/stroke-prediction/",
+          image:
+            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "Premier League Match Prediction",
+          description:
+            "I engineered rolling form, venue splits, and travel fatigue features from three seasons (1,130 matches) and compared logistic, Poisson, XGBoost, and LightGBM models. A follow-up stress test showed the signal holds across seasons and beats always-home 0.51 to 0.43, but the travel fatigue features add noise: dropping them helps.",
+          techStack: [
+            "Python",
+            "XGBoost",
+            "LightGBM",
+            "Feature Engineering",
+            "Poisson Regression",
+          ],
+          githubLink:
+            "https://github.com/nepalanurag/premier-league-match-prediction",
+          liveLink:
+            "https://nepalanurag.github.io/premier-league-match-prediction/",
+          image:
+            "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
+        {
+          title: "Lasso Simulation Study",
+          description:
+            "I ran a lasso variable-selection simulation over sample sizes, dimensions, signal strengths, and correlations with 100 replications per setting, comparing min-lambda and 1se tuning. A real-data follow-up on the diabetes set confirmed the pattern: the 1se rule keeps exactly the predictors both rules select in over 94% of bootstraps.",
+          techStack: ["R", "Python", "Lasso", "Simulation", "Bootstrap"],
+          githubLink: "https://github.com/nepalanurag/lasso-simulation-study",
+          liveLink: "https://nepalanurag.github.io/lasso-simulation-study/",
+          image:
+            "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fHx8fA%3D%3D?w=600&h=400&fit=crop",
+        },
       ],
     },
     {
@@ -158,14 +218,6 @@ export default function ProjectsSection() {
 
   const moreProjects = [
     {
-      title: "Premier League Match Prediction",
-      description:
-        "Predicting match outcomes with rolling form features, trained on three seasons from 2023-24 through 2025-26 (1,130 matches).",
-      githubLink: "https://github.com/nepalanurag/premier-league-match-prediction",
-      liveLink: "https://nepalanurag.github.io/premier-league-match-prediction/",
-      liveLabel: "Results",
-    },
-    {
       title: "NBA Schedule Analysis",
       description:
         "NBA game and schedule data analyzed with R and the tidyverse. The source CSVs are proprietary, so the repo ships the analysis without them.",
@@ -179,22 +231,6 @@ export default function ProjectsSection() {
         "A pipeline bake-off for house price modeling, comparing imputation strategies head to head.",
       githubLink: "https://github.com/nepalanurag/housing-price-model",
       liveLink: "https://nepalanurag.github.io/housing-price-model/",
-      liveLabel: "Results",
-    },
-    {
-      title: "Stroke Prediction",
-      description:
-        "Stroke prediction from healthcare data, comparing eight models from logistic regression to boosting.",
-      githubLink: "https://github.com/nepalanurag/stroke-prediction",
-      liveLink: "https://nepalanurag.github.io/stroke-prediction/",
-      liveLabel: "Results",
-    },
-    {
-      title: "Lasso Simulation Study",
-      description:
-        "How lasso variable selection behaves across sample sizes, dimensions, and correlation strengths.",
-      githubLink: "https://github.com/nepalanurag/lasso-simulation-study",
-      liveLink: "https://nepalanurag.github.io/lasso-simulation-study/",
       liveLabel: "Results",
     },
     {
@@ -212,14 +248,6 @@ export default function ProjectsSection() {
       githubLink: "https://github.com/nepalanurag/statistics-in-the-ai-age",
       liveLink: "https://nepalanurag.github.io/statistics-in-the-ai-age/",
       liveLabel: "Read",
-    },
-    {
-      title: "Conformal Prediction for LLMs",
-      description:
-        "Honest confidence sets for LLM answers with split conformal prediction.",
-      githubLink: "https://github.com/nepalanurag/conformal-llm",
-      liveLink: "https://conformal-llm.vercel.app/",
-      liveLabel: "Demo",
     },
     {
       title: "Kalshi BTC 15m Bot",
