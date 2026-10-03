@@ -178,18 +178,26 @@ Plotly.newPlot("perclass", ["precision","recall","f1"].map(m => ({
   x: D.labels, y: D.labels.map(l => D.per_class[l][m]),
   name: m, type: "bar"
 })), {barmode: "group", yaxis: {range: [0, 1.05], title: "score"},
-      title: "Per-class precision, recall, F1", margin: {t: 40}});
+      xaxis: {tickangle: 0, tickfont: {size: 11}},
+      title: "Per-class precision, recall, F1", margin: {t: 50, r: 20, b: 110, l: 60},
+      height: 420,
+      legend: {orientation: "h", x: 0.5, xanchor: "center", y: -0.3, yanchor: "top"}},
+     {responsive: true});
 
 // Calibration curve
 const xs = D.bins.map(b => b.mean_confidence), ys = D.bins.map(b => b.accuracy),
       ns = D.bins.map(b => b.n);
 Plotly.newPlot("calib", [
   {x: [0,1], y: [0,1], mode: "lines", line: {dash: "dash", color: "gray"}, name: "perfect calibration"},
-  {x: xs, y: ys, mode: "markers+text", text: ns.map(v => "n="+v), textposition: "top center",
+  {x: xs, y: ys, mode: "markers+text", text: ns.map(v => "n="+v),
+   textposition: ns.map((v, i) => i === ns.length - 1 ? "middle left" : "top center"),
    marker: {size: ns.map(v => 8 + 24*v/Math.max(...ns)), color: "#2563eb"}, name: "binned predictions"}
-], {xaxis: {range: [0,1], title: "mean predicted confidence"},
-    yaxis: {range: [0,1], title: "observed accuracy"},
-    title: "Calibration curve", margin: {t: 40}});
+], {xaxis: {range: [0, 1.06], title: "mean predicted confidence"},
+    yaxis: {range: [0, 1.12], title: "observed accuracy"},
+    title: "Calibration curve", margin: {t: 70, r: 20, b: 110, l: 60},
+    height: 420,
+    legend: {orientation: "h", x: 0.5, xanchor: "center", y: -0.3, yanchor: "top"}},
+   {responsive: true});
 
 // Error by length
 Plotly.newPlot("errlen", [{
@@ -199,15 +207,21 @@ Plotly.newPlot("errlen", [{
     arrayminus: D.by_len.map(r => r.accuracy - r.ci95[0])},
   type: "bar", marker: {color: "#2563eb"}
 }], {yaxis: {range: [0, 1.05], title: "accuracy"},
-     title: "Accuracy by abstract length quartile (95% Wilson CI)", margin: {t: 40}});
+     xaxis: {tickangle: 0, tickfont: {size: 11}},
+     title: "Accuracy by abstract length quartile<br>(95% Wilson CI)",
+     margin: {t: 50, r: 20, b: 80, l: 60}, height: 420},
+    {responsive: true});
 
 // Error by topic
 Plotly.newPlot("errtopic", [{
   x: D.by_topic.map(r => r.topic), y: D.by_topic.map(r => r.accuracy),
   type: "bar", marker: {color: "#ff7f0e"},
   text: D.by_topic.map(r => "n=" + r.n), textposition: "outside"
-}], {yaxis: {range: [0, 1.05], title: "accuracy"},
-     title: "Accuracy by topic", margin: {t: 40}});
+}], {yaxis: {range: [0, 1.12], title: "accuracy"},
+     xaxis: {tickangle: 0, tickfont: {size: 11}},
+     title: "Accuracy by topic",
+     margin: {t: 50, r: 20, b: 80, l: 60}, height: 420},
+    {responsive: true});
 </script>
 </div>
 </body>

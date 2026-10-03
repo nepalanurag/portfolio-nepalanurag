@@ -169,9 +169,12 @@ const KS = {"features": ["mean radius", "mean texture", "mean perimeter", "mean 
 Plotly.newPlot("ksplot", [
   {y: KS.features, x: KS.copula, type: "bar", orientation: "h", name: "Copula", marker: {color: "#2563eb"}},
   {y: KS.features, x: KS.llm, type: "bar", orientation: "h", name: "LLM", marker: {color: "#d62728"}}
-], {title: "Per-feature KS statistic (lower = margins match better)",
-    xaxis: {title: "KS statistic"}, barmode: "group", height: 560,
-    margin: {l: 190}});
+], {title: "Per-feature KS statistic<br>(lower = margins match better)",
+    xaxis: {title: "KS statistic"}, yaxis: {automargin: true},
+    barmode: "group", height: 700,
+    margin: {t: 70, r: 20, b: 110, l: 150},
+    legend: {orientation: "h", x: 0.5, xanchor: "center", y: -0.16, yanchor: "top"}},
+   {responsive: true});
 
 const TSTR = [{"model": "Random forest", "trained_on": "Real train", "auc": 0.9849, "lo": 0.9697, "hi": 0.9954}, {"model": "Random forest", "trained_on": "Copula", "auc": 0.9824, "lo": 0.9651, "hi": 0.9954}, {"model": "Random forest", "trained_on": "LLM", "auc": 0.9546, "lo": 0.9193, "hi": 0.9803}, {"model": "Logistic regression", "trained_on": "Real train", "auc": 0.9885, "lo": 0.9736, "hi": 0.9979}, {"model": "Logistic regression", "trained_on": "Copula", "auc": 0.9844, "lo": 0.9687, "hi": 0.9945}, {"model": "Logistic regression", "trained_on": "LLM", "auc": 0.9194, "lo": 0.8755, "hi": 0.9563}];
 {
@@ -185,21 +188,28 @@ const TSTR = [{"model": "Random forest", "trained_on": "Real train", "auc": 0.98
       marker: {size: 10, color: ["#2563eb", "#d62728"][i]}};
   });
   Plotly.newPlot("tstrplot", traces,
-    {title: "TSTR: AUC on the real holdout (95% bootstrap CI)",
-      xaxis: {title: "AUC", range: [0.9, 1.0]}});
+    {title: "TSTR: AUC on the real holdout<br>(95% bootstrap CI)",
+     xaxis: {title: "AUC", range: [0.9, 1.0], nticks: 6},
+     height: 420, margin: {t: 80, r: 20, b: 90, l: 70},
+     legend: {orientation: "h", x: 0.5, xanchor: "center", y: -0.25, yanchor: "top"}},
+    {responsive: true});
 }
 
 const TO = {"copula": {"corr": 1.4168, "drop": 0.0025, "mi": 0.5421}, "llm": {"corr": 15.7272, "drop": 0.0303, "mi": 0.5595}};
 Plotly.newPlot("tradeplot", [
   {x: [TO.copula.corr], y: [TO.copula.drop], mode: "markers+text", name: "Copula",
-    text: ["Copula (MI AUC " + TO.copula.mi + ")"], textposition: "top center",
+    showlegend: false,
+    text: ["Copula (MI AUC " + TO.copula.mi.toFixed(2) + ")"], textposition: "middle right",
     marker: {size: 18 + 400 * Math.max(TO.copula.mi - 0.5, 0), color: "#2563eb"}},
   {x: [TO.llm.corr], y: [TO.llm.drop], mode: "markers+text", name: "LLM",
-    text: ["LLM (MI AUC " + TO.llm.mi + ")"], textposition: "top center",
+    showlegend: false,
+    text: ["LLM (MI AUC " + TO.llm.mi.toFixed(2) + ")"], textposition: "top left",
     marker: {size: 18 + 400 * Math.max(TO.llm.mi - 0.5, 0), color: "#d62728"}}
-], {title: "Fidelity vs utility; bubble size = privacy leakage (MI AUC - 0.5)",
-    xaxis: {title: "Correlation-matrix distance (lower is better)"},
-    yaxis: {title: "TSTR AUC drop vs train-on-real, RF (lower is better)"}});
+], {title: "Fidelity vs utility<br>bubble size = MI AUC above 0.5",
+    xaxis: {title: "Correlation-matrix distance (lower is better)", range: [0, 18]},
+    yaxis: {title: "TSTR AUC drop vs train-on-real, RF (lower is better)"},
+    height: 420, margin: {t: 90, r: 20, b: 70, l: 70}},
+   {responsive: true});
 </script>
 </div>
 </body>

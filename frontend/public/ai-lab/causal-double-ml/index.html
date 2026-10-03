@@ -159,10 +159,11 @@ Plotly.newPlot('confPlot', [{
   y: [0.497, 0.611, 0.670, 0.685, 0.746, 0.800, 0.859, 0.900, 0.951, 0.975],
   mode: 'lines+markers', name: 'Share eligible',
   line: {color: BLUE}, marker: {color: BLUE, size: 8}
-}], { title: 'Eligibility rises with income: the confounding',
-      xaxis: {title: 'Household income ($ thousands, decile midpoints)'},
+}], { title: 'Eligibility rises with income:<br>the confounding',
+      xaxis: {title: 'Household income<br>($ thousands, decile midpoints)'},
       yaxis: {title: 'Share eligible for 401(k)', range: [0.45, 1.02]},
-      margin: {t: 40} }, {responsive: true});
+      height: 420, showlegend: false,
+      margin: {t: 80, r: 20, b: 60, l: 60} }, {responsive: true});
 
 // Forest plot
 const methods = ['Naive OLS', 'OLS with controls', 'Propensity-score matching', 'DML (K=5, RF)'];
@@ -175,13 +176,16 @@ Plotly.newPlot('forestPlot', [{
             array: hi.map((h,i)=>h-est[i]), arrayminus: est.map((e,i)=>e-lo[i]),
             color: BLUE, thickness: 2, width: 6},
   marker: {color: BLUE, size: 10}, name: 'Estimate with 95% CI'
-}], { title: 'Treatment effect estimates with 95% confidence intervals',
-      xaxis: {title: 'Estimated effect of 401(k) eligibility on net financial assets ($)'},
+}], { title: 'Treatment effect estimates<br>with 95% confidence intervals',
+      xaxis: {title: 'Estimated 401(k) effect<br>on net financial assets ($)',
+              nticks: 6},
+      yaxis: {automargin: true},
+      height: 460, showlegend: false,
       shapes: [{type: 'line', x0: TRUTH, x1: TRUTH, y0: -0.6, y1: 3.6,
                 line: {color: RED, dash: 'dash', width: 2}}],
-      annotations: [{x: TRUTH, y: 3.55, text: 'True effect ($8,000)',
+      annotations: [{x: TRUTH, y: 3.35, text: 'True effect ($8,000)',
                      showarrow: false, xanchor: 'left', font: {color: RED}}],
-      margin: {t: 40, l: 190} }, {responsive: true});
+      margin: {t: 80, r: 20, b: 80, l: 150} }, {responsive: true});
 
 // Balance love plot
 const covs = ['Income', 'Age', 'Education', 'Family size', 'Married', 'Has IRA', 'Owns home'];
@@ -192,13 +196,16 @@ Plotly.newPlot('balancePlot', [
    marker: {color: RED, size: 10}},
   {x: after, y: covs, mode: 'markers', name: 'After matching',
    marker: {color: BLUE, size: 10, symbol: 'square'}}
-], { title: 'Covariate balance before and after matching',
+], { title: 'Covariate balance<br>before and after matching',
      xaxis: {title: 'Absolute standardized mean difference'},
+     yaxis: {automargin: true},
+     height: 420,
      shapes: [{type: 'line', x0: 0.1, x1: 0.1, y0: -0.6, y1: 6.6,
                line: {color: '#333', dash: 'dash', width: 1}}],
      annotations: [{x: 0.1, y: 6.55, text: '0.1 rule of thumb',
                     showarrow: false, xanchor: 'left'}],
-     margin: {t: 40, l: 110} }, {responsive: true});
+     legend: {orientation: 'h', x: 0.5, xanchor: 'center', y: -0.25, yanchor: 'top'},
+     margin: {t: 80, r: 20, b: 110, l: 110} }, {responsive: true});
 
 // Sensitivity plot
 const sensLab = ['RF, K=2', 'RF, K=5', 'RF, K=10', 'GBM, K=2', 'GBM, K=5', 'GBM, K=10'];
@@ -211,11 +218,13 @@ Plotly.newPlot('sensPlot', [{
             array: sensHi.map((h,i)=>h-sensEst[i]), arrayminus: sensEst.map((e,i)=>e-sensLo[i]),
             color: BLUE, thickness: 2, width: 5},
   marker: {color: BLUE, size: 9}, name: 'DML estimate with 95% CI'
-}], { title: 'DML sensitivity: nuisance learner and number of folds',
+}], { title: 'DML sensitivity: nuisance learner<br>and number of folds',
       xaxis: {title: 'DML estimate of the 401(k) effect ($)'},
+      yaxis: {automargin: true},
+      height: 420, showlegend: false,
       shapes: [{type: 'line', x0: TRUTH, x1: TRUTH, y0: -0.6, y1: 5.6,
                 line: {color: RED, dash: 'dash', width: 2}}],
-      margin: {t: 40, l: 90} }, {responsive: true});
+      margin: {t: 80, r: 20, b: 60, l: 90} }, {responsive: true});
 </script>
 </div>
 </body>
