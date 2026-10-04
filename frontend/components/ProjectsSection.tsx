@@ -242,14 +242,6 @@ export default function ProjectsSection() {
       liveLabel: "Results",
     },
     {
-      title: "Statistics in the AI Age",
-      description:
-        "A short essay on which statistical skills still matter now that AI writes the code.",
-      githubLink: "https://github.com/nepalanurag/statistics-in-the-ai-age",
-      liveLink: "https://nepalanurag.github.io/statistics-in-the-ai-age/",
-      liveLabel: "Read",
-    },
-    {
       title: "Kalshi BTC 15m Bot",
       description:
         "A trading bot for Kalshi BTC 15-minute markets: RSI signals with a volatility-based strike picker. Paper trading only, no real orders.",
