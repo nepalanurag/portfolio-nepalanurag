@@ -8,12 +8,13 @@ interface NavigationProps {
   scrollToSection: (section: string) => void;
 }
 
-const projectGroups = [
+const projectGroups: { name: string; id: string; href?: string }[] = [
   { name: "All Projects", id: "projects" },
   { name: "AI & Statistics", id: "projects-ai-statistics" },
   { name: "Medical Diagnostics", id: "projects-medical-diagnostics" },
   { name: "Research", id: "projects-research" },
   { name: "More projects", id: "projects-more-projects" },
+  { name: "Papers", id: "papers", href: "/papers/" },
 ];
 
 export default function Navigation({
@@ -79,13 +80,23 @@ export default function Navigation({
                 <div className="absolute left-0 top-full pt-2 w-60">
                   <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-2">
                     {projectGroups.map((group) => (
-                      <button
-                        key={group.id}
-                        onClick={() => goTo(group.id)}
-                        className="block w-full text-left px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
-                      >
-                        {group.name}
-                      </button>
+                      group.href ? (
+                        <a
+                          key={group.id}
+                          href={group.href}
+                          className="block w-full text-left px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
+                        >
+                          {group.name}
+                        </a>
+                      ) : (
+                        <button
+                          key={group.id}
+                          onClick={() => goTo(group.id)}
+                          className="block w-full text-left px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 font-medium"
+                        >
+                          {group.name}
+                        </button>
+                      )
                     ))}
                   </div>
                 </div>
@@ -140,13 +151,23 @@ export default function Navigation({
             {mobileProjectsOpen && (
               <div className="pl-4 space-y-1">
                 {projectGroups.map((group) => (
-                  <button
-                    key={group.id}
-                    onClick={() => goTo(group.id)}
-                    className="block w-full text-left px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md font-medium"
-                  >
-                    {group.name}
-                  </button>
+                  group.href ? (
+                    <a
+                      key={group.id}
+                      href={group.href}
+                      className="block w-full text-left px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md font-medium"
+                    >
+                      {group.name}
+                    </a>
+                  ) : (
+                    <button
+                      key={group.id}
+                      onClick={() => goTo(group.id)}
+                      className="block w-full text-left px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md font-medium"
+                    >
+                      {group.name}
+                    </button>
+                  )
                 ))}
               </div>
             )}
