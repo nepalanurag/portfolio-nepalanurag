@@ -1,0 +1,22 @@
+# Anurag Nepal — Portfolio
+
+> Data Scientist and researcher based in San Francisco. Portfolio of projects,
+> experience, and hosted research papers.
+
+## Portfolio
+
+- [Home](https://anurag-nepal-portfolio.vercel.app/): Projects, experience, about, contact.
+- [Papers](https://anurag-nepal-portfolio.vercel.app/papers/): Research papers hosted on this site.
+
+## Papers
+
+### Two-Facet Corners for Large Weight-Driven Pipe Organ Reservoirs: Adaptation and Variation
+- Author: David E. Goggin, M.S.
+- Page: [https://anurag-nepal-portfolio.vercel.app/papers/two-facet-paper/](https://anurag-nepal-portfolio.vercel.app/papers/two-facet-paper/)
+- PDF: [https://anurag-nepal-portfolio.vercel.app/papers/two-facet-paper/two-facet-corners-adapt-vary.pdf](https://anurag-nepal-portfolio.vercel.app/papers/two-facet-paper/two-facet-corners-adapt-vary.pdf)
+- Abstract: Two-facet corners are designed so that as much of the reservoir corner as feasible is constructed from rigid material, rather than flexible leather or rubber-cloth, to maximize the corner's durability, maintainability, and precision of pressure regulation. The geometry and parametrical error properties of the two-facet outward-folding corner (first introduced in the context of voided reservoirs) are explored. A newly-discovered two-facet alternate-folding corner type is introduced that has analogous geometric properties to the two-facet outward corner. Banausic fabrication algorithms for the rib fragments of two-facet corners are presented, that facilitate their use in reservoirs large enough that the weight of the rib material would strain traditional cloth and leather inter-rib hinges. A novel type of single-level voided reservoir is described, enabled by the two-facet alternate-folding corner. An imperfect type of camera-folded reservoir, enabled by the commensurable species of two-facet alternate-folding corner is also described. Thought-experiments in designing very large reservoirs are presented.
+
+## Contact
+
+- Email: nepalanurag72@gmail.com
+- GitHub: [https://github.com/nepalanurag](https://github.com/nepalanurag)
