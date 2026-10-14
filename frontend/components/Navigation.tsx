@@ -14,7 +14,6 @@ const projectGroups: { name: string; id: string; href?: string }[] = [
   { name: "Medical Diagnostics", id: "projects-medical-diagnostics" },
   { name: "Research", id: "projects-research" },
   { name: "More projects", id: "projects-more-projects" },
-  { name: "Papers", id: "papers", href: "/papers/" },
 ];
 
 export default function Navigation({
