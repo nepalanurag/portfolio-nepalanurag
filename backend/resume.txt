@@ -1,0 +1,56 @@
+Anurag Nepal
+Statistical Data Scientist
+nepalanurag72@gmail.com · (650) 270-6636 · San Francisco, CA · github.com/nepalanurag · anurag-nepal-portfolio.vercel.app · linkedin.com/in/
+anurag-nepal-1587a4191
+
+
+PROFESSIONAL SUMMARY
+
+M.S. in Statistical Data Science (4.0 GPA, Distinguished Graduate), B.E. in Computer Science. My thesis introduced a permutation-
+assisted group lasso that cut false discoveries from 53% to 1% vs. lasso baselines; I also ship production software: Android apps, web
+tools, and data pipelines.
+
+WORK EXPERIENCE
+
+Graduate Assistant                                                                                                           Feb 2025 – Present
+San Francisco State University, San Francisco, CA
+    • Thesis research on permutation-assisted group lasso for multi-modal feature selection; presented T-cell receptor findings at
+      BBSW 2025.
+    • Reproduced Random Forests, Boruta, and variable-importance methods from papers as validated R code.
+
+EDUCATION
+
+M.S. Statistical Data Science                                                                                                       2024 – 2026
+San Francisco State University, San Francisco, CA
+GPA 4.0/4.0; Distinguished Graduate Award; General Officer, Data Science Society.
+B.E. Computer Science & Engineering                                                                                                 2019 – 2023
+Nitte Meenakshi Institute of Technology, Bengaluru, India
+GPA 9.34/10.0; ranked among the top 5 graduates.
+
+SKILLS
+
+Languages Python (PyTorch, TensorFlow, scikit-learn, OpenCV), R (ggplot2), SQL, Java, C/C++
+Methods Penalized regression (lasso, group lasso), causal inference (double ML), conformal prediction, Bayesian A/B testing,
+        time-series forecasting, CNNs, RAG evaluation
+Tools Git/GitHub, Vercel, Android Studio, Tableau, SQLite
+
+PROJECTS
+
+Permutation-Assisted Group Lasso — M.S. Thesis github.com/nepalanurag/thesis-findings
+R
+    • 18-scenario simulation (n=100/200, 200–400 noise features, 50 runs each): early-fusion adaptive model reached FDR 0.01 vs.
+      0.526 for lasso, F1 0.787, Jaccard stability 0.59; TCGA-BRCA validation: 0.68 stability, 0.948 AUC.
+COVID-19 Lung Infection Segmentation github.com/nepalanurag/Biomedical-Imaging-Analysis
+Python
+    • ML system detecting COVID-19 in chest CT scans; cut per-image processing time from 5 minutes to 2.
+Malaria Detection with CNN github.com/nepalanurag/Detection-of-Malaria-Using-CNN
+Python, TensorFlow
+    • CNN classifier for malaria parasites in blood-smear images; co-authored published research paper.
+ECG Heartbeat Classification github.com/nepalanurag/ECG-Classification
+Python
+    • CNN/ANN/KNN on MIT-BIH data for arrhythmia and myocardial-infarction prediction.
+Statistics-meets-AI Lab anurag-nepal-portfolio.vercel.app/ai-lab
+Python
+    • Double-ML causal effect of 401(k) eligibility; factorial RAG evaluation; LLM-annotator reliability; Bayesian A/B testing calculator
+      — all with live dashboards.
+
